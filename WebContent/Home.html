@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+  <head>
+  
+  <title>Angular Search</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  <script src="script.js"></script>
+  </head>
+  <body class="container" ng-controller="StoreController as store">
+  
+  <div>
+    <input type="search" ng-model="search.name"/><label>Search</label>
+   
+  </div>
+    <div class="product row" ng-repeat="product in store.products | filter:search" ">
+    
+      <h3>
+        {{product.name}}
+        <em class="pull-right">${{product.price}}</em>
+      </h3>
+    </div>
+    
+      
+      
+    
+  </body>
+</html>
